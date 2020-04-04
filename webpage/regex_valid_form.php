@@ -15,11 +15,36 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$replacedText=preg_replace($pattern, $replaceText, $text);
 
 	if(preg_match($pattern, $text)) {
-						$match="Match!";
-					} else {
-						$match="Does not match!";
-					}
+		$match="Match!";
+	} else {
+		$match="Does not match!";
+	}
 }
+
+
+function rem_space($text){
+
+	return preg_replace("/\s+/g", "", $text);
+
+}
+function rem_nonnum($text){
+
+	return preg_replace("/[^0-9]+/g", "", $text);
+
+}
+function rem_newline($text){
+
+	return preg_replace("/\n+/g", "", $text);
+
+}
+function extract_text($text){
+
+	return preg_match("/(?!\[).+(?=\])/g", subject);
+
+}
+
+
+
 
 ?>
 
